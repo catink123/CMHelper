@@ -1,0 +1,5 @@
+@import './app/mastery-card/mastery-card.component.scss-theme.scss';
+
+@mixin custom-components-themes($theme) {
+    @include mastery-card-theme($theme);
+}

@@ -1,0 +1,14 @@
+@import "~@angular/material/theming";
+@mixin mastery-card-theme($config-or-theme) {
+    $config: mat-get-color-config($config-or-theme);
+    $primary: map-get($config, primary);
+    $accent: map-get($config, accent);
+
+    mat-card.done {
+        background-color: mat.get-color-from-palette($primary, 100);
+    }
+
+    mat-icon.got {
+        color: mat.get-color-from-palette($accent, 500);
+    }
+}
