@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  riotAPIKey: 'RGAPI-289ed4d2-a77a-4a75-a1d6-252d7237acfd'
+  riotAPIKey: 'api_key'
 };
 
 /*
