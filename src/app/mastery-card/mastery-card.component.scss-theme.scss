@@ -5,10 +5,14 @@
     $accent: map-get($config, accent);
 
     mat-card.done {
-        background-color: mat.get-color-from-palette($primary, 100);
+        background-color: mat.get-color-from-palette($primary, 900);
     }
 
     mat-icon.got {
         color: mat.get-color-from-palette($accent, 500);
+    }
+
+    mat-icon.got.lastLevel {
+        color: mat.get-color-from-palette($primary, 400);
     }
 }

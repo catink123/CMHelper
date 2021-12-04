@@ -6,12 +6,12 @@
     </mat-card-header>
     <mat-card-content>
         <p>Сундук:
-            <mat-icon style="color: green" *ngIf="chestGranted">done</mat-icon>
-            <mat-icon style="color: darkred" *ngIf="!chestGranted">clear</mat-icon>
+            <mat-icon style="color: limegreen" *ngIf="chestGranted">done</mat-icon>
+            <mat-icon style="color: red" *ngIf="!chestGranted">clear</mat-icon>
         </p>
 
         <p *ngIf="championLevel < 7 && championLevel > 4">Токены:
-            <mat-icon *ngFor="let i of tokenArray[0]" ngClass="got">hive</mat-icon>
+            <mat-icon *ngFor="let i of tokenArray[0]" [ngClass]="championLevel === 6 ? 'lastLevel got' : 'got'">hive</mat-icon>
             <mat-icon *ngFor="let i of tokenArray[1]" style="color: gray">hive</mat-icon>
         </p>
         <p>

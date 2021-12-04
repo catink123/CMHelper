@@ -67,9 +67,9 @@ export class AppComponent implements OnInit {
           return b.championPoints - a.championPoints
         }
         break;
-      case "chestGranted":
+      case "reverseChestGranted":
         sortFunction = function(a: IFormattedEntry, b: IFormattedEntry) {
-          return b.chestGranted - a.chestGranted
+          return a.chestGranted - b.chestGranted
         }
         break;
       case "championLevel":
