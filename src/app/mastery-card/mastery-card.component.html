@@ -14,6 +14,9 @@
             <mat-icon *ngFor="let i of tokenArray[0]" ngClass="got">hive</mat-icon>
             <mat-icon *ngFor="let i of tokenArray[1]" style="color: gray">hive</mat-icon>
         </p>
+        <p>
+            Очки мастерства: {{ championPoints | number }}
+        </p>
         <!-- <mat-checkbox [checked]="!!chestGranted" (change)="null">Сундук</mat-checkbox> -->
     </mat-card-content>
     <mat-card-actions>

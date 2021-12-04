@@ -22,6 +22,7 @@ export class CmService {
     private versionService: VersionService,
     private saveData: SaveDataService) {
     this.setupChampionList();
+    this.getChampionList().then(val => console.log(val));
     this.favourited = this.saveData.favourited;
   }
 
@@ -59,9 +60,11 @@ export class CmService {
     for (const mastery of masteryList) {
       const champion = champions.find(val => parseInt(val.key) === mastery.championId);
       const name = champion!.name;
-      const imageURL = `http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${champion?.id}_0.jpg`;
-      const {championLevel, chestGranted, tokensEarned, championId} = mastery;
-      resultList.push({name, championLevel, chestGranted, tokensEarned, imageURL, championId});
+      const versions = await this.versionService.getVersions();
+      const version = versions[0];
+      const imageURL = `http://ddragon.leagueoflegends.com/cdn/${version}/img/champion/${champion?.id}.png`;
+      const {championLevel, chestGranted, tokensEarned, championId, championPoints} = mastery;
+      resultList.push({name, championLevel, chestGranted, tokensEarned, imageURL, championId, championPoints});
     }
     return resultList;
   }

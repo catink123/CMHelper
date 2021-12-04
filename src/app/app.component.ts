@@ -25,6 +25,8 @@ export class AppComponent implements OnInit {
 
   async ngOnInit() {
     await this.updateMasteryList();
+    this.sortBy(this.saveData.sortCriteria);
+    this.showFavourited = this.saveData.showFavourited;
   }
 
   showEditNameDialog() {
@@ -42,10 +44,45 @@ export class AppComponent implements OnInit {
     });
   }
 
+  toggleShowFavourited() {
+    this.showFavourited = !this.showFavourited;
+    this.saveData.showFavourited = this.showFavourited;
+  }
+
   get favouritedMasteryList(): IFormattedEntry[] {
     return this.masteryList.filter(val => {
       if (this.cmService.favourited.includes(val.championId)) return true;
       return false;
     })
+  }
+
+  sortBy(criteria: string) {
+    this.saveData.sortCriteria = criteria;
+    let sortFunction = function(a: IFormattedEntry, b: IFormattedEntry) {
+      return b.championPoints - a.championPoints
+    };
+    switch(criteria) {
+      case "championPoints":
+        sortFunction = function(a: IFormattedEntry, b: IFormattedEntry) {
+          return b.championPoints - a.championPoints
+        }
+        break;
+      case "chestGranted":
+        sortFunction = function(a: IFormattedEntry, b: IFormattedEntry) {
+          return b.chestGranted - a.chestGranted
+        }
+        break;
+      case "championLevel":
+        sortFunction = function(a: IFormattedEntry, b: IFormattedEntry) {
+          return b.championLevel - a.championLevel
+        }
+        break;
+      case "hasTokens":
+        sortFunction = function(a: IFormattedEntry, b: IFormattedEntry) {
+          return b.tokensEarned - a.tokensEarned
+        }
+        break;
+    }
+    this.masteryList.sort(sortFunction)
   }
 }

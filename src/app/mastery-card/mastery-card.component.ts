@@ -13,6 +13,7 @@ export class MasteryCardComponent implements OnInit {
   @Input() imageURL = '';
   @Input() chestGranted = 0;
   @Input() championId = 0;
+  @Input() championPoints = 0;
 
   constructor(private cmService: CmService) { }
 

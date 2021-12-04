@@ -2,9 +2,23 @@
   <span>CMHelper - {{name}}</span>
 
   <span class="spacer"></span>
-  <mat-checkbox [(ngModel)]="showFavourited">Избранные</mat-checkbox>
+  <!-- <mat-checkbox [(ngModel)]="showFavourited"><mat-icon>star_outline</mat-icon></mat-checkbox> -->
+  <button mat-icon-button (click)="toggleShowFavourited()">
+    <mat-icon *ngIf="showFavourited">star</mat-icon>
+    <mat-icon *ngIf="!showFavourited">star_outline</mat-icon>
+  </button>
   <!-- <button mat-button (click)="toggleShowFavourited()"></button> -->
-  <button mat-button (click)="showEditNameDialog()">Изменить никнейм</button>
+  <button mat-icon-button [matMenuTriggerFor]="sortMenu"><mat-icon>format_list_bulleted</mat-icon></button>
+  <mat-menu #sortMenu="matMenu">
+    <button mat-menu-item (click)="sortBy('championPoints')">Очки мастерства</button>
+    <button mat-menu-item (click)="sortBy('chestGranted')">Наличие сундука</button>
+    <button mat-menu-item (click)="sortBy('championLevel')">Уровень мастерства</button>
+    <button mat-menu-item (click)="sortBy('hasTokens')">Наличие токенов</button>
+  </mat-menu>
+  <button mat-icon-button [matMenuTriggerFor]="appMenu"><mat-icon>more_vert</mat-icon></button>
+  <mat-menu #appMenu="matMenu">
+    <button mat-menu-item (click)="showEditNameDialog()">Изменить никнейм</button>
+  </mat-menu>
 </mat-toolbar>
 <mat-progress-bar mode="indeterminate" *ngIf="masteryList.length === 0"></mat-progress-bar>
 
@@ -16,6 +30,7 @@
     [chestGranted]="mastery.chestGranted"
     [championId]="mastery.championId"
     [imageURL]="mastery.imageURL"
-    [tokensEarned]="mastery.tokensEarned">
+    [tokensEarned]="mastery.tokensEarned"
+    [championPoints]="mastery.championPoints">
   </app-mastery-card>
 </div>

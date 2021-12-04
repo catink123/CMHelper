@@ -63,4 +63,20 @@ export class SaveDataService {
     data.showFavourited = newValue;
     this.setData(data);
   }
+
+  get sortCriteria(): string {
+    const data = this.getData();
+    if (data) {
+      if (data.sortCriteria) return data.sortCriteria;
+      else return "";
+    }
+    return "";
+  }
+
+  set sortCriteria(newValue: string) {
+    let data = this.getData();
+    if (!data) data = {};
+    data.sortCriteria = newValue;
+    this.setData(data);
+  }
 }
