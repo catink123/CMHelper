@@ -1,7 +1,7 @@
 {
   "name": "CMHelper",
   "short_name": "CMHelper",
-  "theme_color": "#00b5dc",
+  "theme_color": "#007d95",
   "background_color": "#222222",
   "display": "standalone",
   "scope": "./",

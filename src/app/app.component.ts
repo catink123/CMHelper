@@ -4,11 +4,23 @@ import IFormattedEntry from './IFormattedEntry';
 import { MatDialog } from '@angular/material/dialog';
 import { EditNameDialogComponent } from './edit-name-dialog/edit-name-dialog.component';
 import { SaveDataService } from './save-data.service';
+import { transition, style, animate, trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  animations: [
+    trigger('searchBarToggle', [
+      transition(':enter', [
+        style({height: '0'}),
+        animate('100ms', style({height: '*'}))
+      ]),
+      transition(':leave', [
+        animate('100ms', style({height: 0}))
+      ])
+    ])
+  ]
 })
 export class AppComponent implements OnInit {
   title = 'CMHelper';
@@ -16,6 +28,8 @@ export class AppComponent implements OnInit {
   masteryList: IFormattedEntry[] = [];
   name = "GamesKaiser";
   showFavourited: boolean = false;
+  showSearchBar = false;
+  searchTerm = "";
   constructor(private cmService: CmService, public dialog: MatDialog, private saveData: SaveDataService) { }
 
   async updateMasteryList() {
@@ -84,5 +98,14 @@ export class AppComponent implements OnInit {
         break;
     }
     this.masteryList.sort(sortFunction)
+  }
+
+  get currentMasteryList(): IFormattedEntry[] {
+    const filterFunction = (val: IFormattedEntry) => val.name.toLowerCase().includes(this.searchTerm.toLowerCase());
+    if (this.showFavourited) {
+      return this.favouritedMasteryList.filter(filterFunction)
+    } else {
+      return this.masteryList.filter(filterFunction)
+    }
   }
 }

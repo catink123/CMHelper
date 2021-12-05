@@ -3,6 +3,10 @@
 
   <span class="spacer"></span>
   <!-- <mat-checkbox [(ngModel)]="showFavourited"><mat-icon>star_outline</mat-icon></mat-checkbox> -->
+  <button mat-icon-button (click)="showSearchBar = !showSearchBar">
+    <mat-icon *ngIf="showSearchBar">search</mat-icon>
+    <mat-icon *ngIf="!showSearchBar">search_outline</mat-icon>
+  </button>
   <button mat-icon-button (click)="toggleShowFavourited()">
     <mat-icon *ngIf="showFavourited">star</mat-icon>
     <mat-icon *ngIf="!showFavourited">star_outline</mat-icon>
@@ -21,10 +25,15 @@
   </mat-menu>
 </mat-toolbar>
 <mat-progress-bar mode="indeterminate" *ngIf="masteryList.length === 0"></mat-progress-bar>
+<mat-toolbar @searchBarToggle *ngIf="showSearchBar" class="searchBar">
+  <mat-form-field appearance="standard" style="width: 100%;">
+    <input placeholder="Поиск..." matInput [(ngModel)]="searchTerm">
+  </mat-form-field>
+</mat-toolbar>
 
 <div class="cardContainer">
   <app-mastery-card 
-    *ngFor="let mastery of (!showFavourited ? masteryList : favouritedMasteryList)"
+    *ngFor="let mastery of currentMasteryList"
     [name]="mastery.name"
     [championLevel]="mastery.championLevel"
     [chestGranted]="mastery.chestGranted"
