@@ -22,11 +22,11 @@
   <button mat-icon-button [matMenuTriggerFor]="appMenu"><mat-icon>more_vert</mat-icon></button>
   <mat-menu #appMenu="matMenu">
     <button mat-menu-item (click)="showEditNameDialog()">Изменить никнейм</button>
-    <button mat-menu-item [matMenuTriggerFor]="viewMenu">View</button>
+    <button mat-menu-item [matMenuTriggerFor]="viewMenu">Вид</button>
   </mat-menu>
   <mat-menu #viewMenu="matMenu">
-    <button mat-menu-item (click)="view = 'cards'">Cards</button>
-    <button mat-menu-item (click)="view = 'list'">List</button>
+    <button mat-menu-item (click)="view = 'cards'">Карточки</button>
+    <button mat-menu-item (click)="view = 'list'">Список</button>
   </mat-menu>
 </mat-toolbar>
 <mat-progress-bar mode="indeterminate" *ngIf="masteryList.length === 0"></mat-progress-bar>
