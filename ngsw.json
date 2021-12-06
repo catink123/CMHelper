@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1638699614444,
+  "timestamp": 1638831176455,
   "index": "/CMHelper/index.html",
   "assetGroups": [
     {
@@ -13,7 +13,7 @@
       "urls": [
         "/CMHelper/favicon.ico",
         "/CMHelper/index.html",
-        "/CMHelper/main.b5dd93c2334cc0d6391f.js",
+        "/CMHelper/main.69e9b67c6ba46ac38951.js",
         "/CMHelper/manifest.webmanifest",
         "/CMHelper/polyfills.57eaf8fe26b6f14dd8c0.js",
         "/CMHelper/runtime.6213bc75426853f06ce4.js",
@@ -56,8 +56,8 @@
     "/CMHelper/assets/icons/icon-96x96.png": "3fedce1a95da1f66e1710d608e52b2d6647c171a",
     "/CMHelper/bg.9143c4281c4e8d713fb7.png": "c1c2efd533eaf9543f42e882992d9754da94e06c",
     "/CMHelper/favicon.ico": "c08e8f9ff0e1053b6d0cd19ff8f77d33b2648a5b",
-    "/CMHelper/index.html": "24c9fc17df6af2c619efd4aace150c6352875b72",
-    "/CMHelper/main.b5dd93c2334cc0d6391f.js": "090c00f443bf50f57af824f839c165bd91ae8d30",
+    "/CMHelper/index.html": "04227d3ecf2e308141e69f51b993deb88f6df95c",
+    "/CMHelper/main.69e9b67c6ba46ac38951.js": "df3c9441d70b2f97d57538a4d5b08f21479866cd",
     "/CMHelper/manifest.webmanifest": "bcaebc941af3379ec08beb207874afccf6182ce0",
     "/CMHelper/polyfills.57eaf8fe26b6f14dd8c0.js": "cdb82adfab18061e2f3f3e703e81ac0fac2cd33c",
     "/CMHelper/runtime.6213bc75426853f06ce4.js": "ecbcb1a589ad7b9a4145250d87b8b3ca57b77407",
