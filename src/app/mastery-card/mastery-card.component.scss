@@ -3,3 +3,30 @@ mat-card-content p {
     vertical-align: middle;
     line-height: 24px;
 }
+
+img[mat-card-avatar] {
+    border-radius: 0;
+}
+
+mat-card-actions button[mat-button] {
+    width: 100%;
+}
+
+mat-card.listItem {
+    height: 200px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+mat-card.listItem mat-card-content {
+    display: flex;
+    gap: 0px;
+    flex-direction: column;
+    margin-bottom: 0;
+    flex-grow: 1;
+}
+
+mat-card.listItem mat-card-content p {
+    margin: 0;
+}

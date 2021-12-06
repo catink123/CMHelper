@@ -14,6 +14,7 @@ export class MasteryCardComponent implements OnInit {
   @Input() chestGranted = 0;
   @Input() championId = 0;
   @Input() championPoints = 0;
+  @Input() appearance = 'card';
 
   constructor(private cmService: CmService) { }
 
@@ -34,4 +35,10 @@ export class MasteryCardComponent implements OnInit {
     else this.cmService.removeFavourite(this.championId);
   }
 
+  get className(): string {
+    var returnValue = "";
+    returnValue += this.championLevel === 7 ? 'done' : '';
+    returnValue += " " + this.appearance;
+    return returnValue;
+  }
 }

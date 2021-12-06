@@ -29,7 +29,8 @@ export class AppComponent implements OnInit {
   name = "GamesKaiser";
   showFavourited: boolean = false;
   showSearchBar = false;
-  searchTerm = "";
+  searchTerm = '';
+  currentView = 'cards';
   constructor(private cmService: CmService, public dialog: MatDialog, private saveData: SaveDataService) { }
 
   async updateMasteryList() {
@@ -41,6 +42,7 @@ export class AppComponent implements OnInit {
     await this.updateMasteryList();
     this.sortBy(this.saveData.sortCriteria);
     this.showFavourited = this.saveData.showFavourited;
+    this.currentView = this.saveData.view;
   }
 
   showEditNameDialog() {
@@ -62,6 +64,20 @@ export class AppComponent implements OnInit {
     this.showFavourited = !this.showFavourited;
     this.saveData.showFavourited = this.showFavourited;
   }
+
+  toggleSearchBar() {
+    this.showSearchBar = !this.showSearchBar;
+    if (!this.showSearchBar) {
+      this.searchTerm = "";
+    }
+  }
+
+  set view(newValue: string) {
+    this.currentView = newValue;
+    this.saveData.view = newValue;
+  }
+
+  get view(): string {return this.currentView};
 
   get favouritedMasteryList(): IFormattedEntry[] {
     return this.masteryList.filter(val => {

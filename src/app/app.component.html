@@ -3,9 +3,9 @@
 
   <span class="spacer"></span>
   <!-- <mat-checkbox [(ngModel)]="showFavourited"><mat-icon>star_outline</mat-icon></mat-checkbox> -->
-  <button mat-icon-button (click)="showSearchBar = !showSearchBar">
+  <button mat-icon-button (click)="toggleSearchBar()">
     <mat-icon *ngIf="showSearchBar">search</mat-icon>
-    <mat-icon *ngIf="!showSearchBar">search_outline</mat-icon>
+    <mat-icon *ngIf="!showSearchBar">search</mat-icon>
   </button>
   <button mat-icon-button (click)="toggleShowFavourited()">
     <mat-icon *ngIf="showFavourited">star</mat-icon>
@@ -22,6 +22,11 @@
   <button mat-icon-button [matMenuTriggerFor]="appMenu"><mat-icon>more_vert</mat-icon></button>
   <mat-menu #appMenu="matMenu">
     <button mat-menu-item (click)="showEditNameDialog()">Изменить никнейм</button>
+    <button mat-menu-item [matMenuTriggerFor]="viewMenu">View</button>
+  </mat-menu>
+  <mat-menu #viewMenu="matMenu">
+    <button mat-menu-item (click)="view = 'cards'">Cards</button>
+    <button mat-menu-item (click)="view = 'list'">List</button>
   </mat-menu>
 </mat-toolbar>
 <mat-progress-bar mode="indeterminate" *ngIf="masteryList.length === 0"></mat-progress-bar>
@@ -31,7 +36,7 @@
   </mat-form-field>
 </mat-toolbar>
 
-<div class="cardContainer">
+<div class="cardContainer" [ngClass]="view">
   <app-mastery-card 
     *ngFor="let mastery of currentMasteryList"
     [name]="mastery.name"
@@ -40,6 +45,7 @@
     [championId]="mastery.championId"
     [imageURL]="mastery.imageURL"
     [tokensEarned]="mastery.tokensEarned"
-    [championPoints]="mastery.championPoints">
+    [championPoints]="mastery.championPoints"
+    [appearance]="currentView === 'cards' ? 'card' : 'listItem'">
   </app-mastery-card>
 </div>

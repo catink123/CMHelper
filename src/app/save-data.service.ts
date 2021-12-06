@@ -79,4 +79,28 @@ export class SaveDataService {
     data.sortCriteria = newValue;
     this.setData(data);
   }
+
+  setDataItem(key: string, value: any) {
+    let data = this.getData();
+    if (!data) data = {};
+    data[key] = value;
+    this.setData(data);
+  }
+
+  getDataItem(key: string, defaultValue: any): any {
+    const data = this.getData();
+    if (data) {
+      if (data[key]) return data[key];
+      else return defaultValue;
+    }
+    return defaultValue;
+  }
+
+  get view(): string {
+    return this.getDataItem('view', 'list');
+  }
+
+  set view(newValue: string) {
+    this.setDataItem('view', newValue);
+  }
 }
