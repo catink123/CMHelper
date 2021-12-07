@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1638831424537,
+  "timestamp": 1638868841102,
   "index": "/CMHelper/index.html",
   "assetGroups": [
     {
@@ -30,14 +30,13 @@
       },
       "urls": [
         "/CMHelper/assets/bg.png",
-        "/CMHelper/assets/icons/icon-128x128.png",
-        "/CMHelper/assets/icons/icon-144x144.png",
-        "/CMHelper/assets/icons/icon-152x152.png",
-        "/CMHelper/assets/icons/icon-192x192.png",
-        "/CMHelper/assets/icons/icon-384x384.png",
-        "/CMHelper/assets/icons/icon-512x512.png",
-        "/CMHelper/assets/icons/icon-72x72.png",
-        "/CMHelper/assets/icons/icon-96x96.png",
+        "/CMHelper/assets/icons/maskable_icon_x128.png",
+        "/CMHelper/assets/icons/maskable_icon_x192.png",
+        "/CMHelper/assets/icons/maskable_icon_x384.png",
+        "/CMHelper/assets/icons/maskable_icon_x48.png",
+        "/CMHelper/assets/icons/maskable_icon_x512.png",
+        "/CMHelper/assets/icons/maskable_icon_x72.png",
+        "/CMHelper/assets/icons/maskable_icon_x96.png",
         "/CMHelper/bg.9143c4281c4e8d713fb7.png"
       ],
       "patterns": []
@@ -46,19 +45,18 @@
   "dataGroups": [],
   "hashTable": {
     "/CMHelper/assets/bg.png": "c1c2efd533eaf9543f42e882992d9754da94e06c",
-    "/CMHelper/assets/icons/icon-128x128.png": "8e25a5f9bc2b4b904ecf18ebcf4042582ed1c194",
-    "/CMHelper/assets/icons/icon-144x144.png": "9c99db6be366ea2ec9250944e4ff4cabf27b93b6",
-    "/CMHelper/assets/icons/icon-152x152.png": "4214467d7f992a9264465cee97a129b6c44c86a3",
-    "/CMHelper/assets/icons/icon-192x192.png": "8270aa7b302e129b2a5b8ab61e2813a1f8ca12a8",
-    "/CMHelper/assets/icons/icon-384x384.png": "266d72a1835d2fb58e19b3a374ceff7984b862c4",
-    "/CMHelper/assets/icons/icon-512x512.png": "e43c27e1368b6f086979f15ba126149c286a9f53",
-    "/CMHelper/assets/icons/icon-72x72.png": "0be65fc4577e038dbed3fc62b1e9a552246a411b",
-    "/CMHelper/assets/icons/icon-96x96.png": "3fedce1a95da1f66e1710d608e52b2d6647c171a",
+    "/CMHelper/assets/icons/maskable_icon_x128.png": "99022a4061162c8e111d97fb7dc3395641fcb26d",
+    "/CMHelper/assets/icons/maskable_icon_x192.png": "d551e2be991edfae4fae1d193b92e66a6c7276c1",
+    "/CMHelper/assets/icons/maskable_icon_x384.png": "5accd33856f2f28e979dd4c2fe10282bb1dd9b04",
+    "/CMHelper/assets/icons/maskable_icon_x48.png": "037b4aa76d43a88a8450113c7559879d20ae4bab",
+    "/CMHelper/assets/icons/maskable_icon_x512.png": "1f88413a54f7447dec0b6c0971f6e6329c514fd9",
+    "/CMHelper/assets/icons/maskable_icon_x72.png": "fdc2fdb2cbe7f73575b349f086a84a23e7755c54",
+    "/CMHelper/assets/icons/maskable_icon_x96.png": "90af79505dfb6a1ec551ec0e019a7a23819ee705",
     "/CMHelper/bg.9143c4281c4e8d713fb7.png": "c1c2efd533eaf9543f42e882992d9754da94e06c",
     "/CMHelper/favicon.ico": "c08e8f9ff0e1053b6d0cd19ff8f77d33b2648a5b",
     "/CMHelper/index.html": "7227c7ac9eeb6f316726812d4fc3e1cb97b490f2",
     "/CMHelper/main.e7ddf0e45e779fa7c67b.js": "b5065e4d15ddcb7c7a076f79550cc09ceed66fa8",
-    "/CMHelper/manifest.webmanifest": "bcaebc941af3379ec08beb207874afccf6182ce0",
+    "/CMHelper/manifest.webmanifest": "2265cf5bdbf122dec89151592723c2d68ef36e74",
     "/CMHelper/polyfills.57eaf8fe26b6f14dd8c0.js": "cdb82adfab18061e2f3f3e703e81ac0fac2cd33c",
     "/CMHelper/runtime.6213bc75426853f06ce4.js": "ecbcb1a589ad7b9a4145250d87b8b3ca57b77407",
     "/CMHelper/styles.0d786a61305efbf4a510.css": "1f185013401427785b2cb73c5cd4bad8ac33ad5a"
