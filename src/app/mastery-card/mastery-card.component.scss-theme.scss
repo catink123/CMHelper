@@ -4,7 +4,19 @@
     $primary: map-get($config, primary);
     $accent: map-get($config, accent);
 
-    mat-card.done {
+    mat-card.level-four {
+        background-color: #7d6000;
+    }
+
+    mat-card.level-five {
+        background-color: #710000;
+    }
+
+    mat-card.level-six {
+        background-color: #790261;
+    }
+
+    mat-card.level-seven {
         background-color: mat.get-color-from-palette($primary, 900);
     }
 

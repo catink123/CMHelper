@@ -1,6 +1,13 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CmService } from '../cm.service';
 
+const levelMap = new Map<number, string>([
+  [4, 'level-four'],
+  [5, 'level-five'],
+  [6, 'level-six'],
+  [7, 'level-seven']
+])
+
 @Component({
   selector: 'app-mastery-card',
   templateUrl: './mastery-card.component.html',
@@ -37,7 +44,7 @@ export class MasteryCardComponent implements OnInit {
 
   get className(): string {
     var returnValue = "";
-    returnValue += this.championLevel === 7 ? 'done' : '';
+    returnValue += levelMap.has(this.championLevel) ? levelMap.get(this.championLevel) : '';
     returnValue += " " + this.appearance;
     return returnValue;
   }
